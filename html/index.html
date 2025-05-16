@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ralph Jericho Q. Lumba - Resume</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <style>
+    :root {
+      --primary: #111827;
+      --secondary: #6b7280;
+      --accent: #2563eb;
+      --bg: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3f4f6;
+      color: var(--primary);
+      padding: 40px 20px;
+    }
+
+    .resume {
+      max-width: 900px;
+      margin: auto;
+      background-color: var(--bg);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      padding: 40px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .left-panel {
+      flex: 1;
+      text-align: center;
+      min-width: 200px;
+    }
+
+    .left-panel img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    .left-panel h1 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .contact-info {
+      font-size: 14px;
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+
+    .right-panel {
+      flex: 3;
+      min-width: 280px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--primary);
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .download-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .download-button button {
+      background-color: var(--accent);
+      color: #fff;
+      padding: 10px 24px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-button button:hover {
+      background-color: #1e40af;
+    }
+
+    @media (max-width: 768px) {
+      .resume {
+        flex-direction: column;
+        padding: 30px 20px;
+      }
+
+      .left-panel {
+        margin-bottom: 20px;
+      }
+
+      .left-panel img {
+        width: 80px;
+        height: 80px;
+      }
+
+.profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  display: block;
+}
+
+
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resume" id="resume">
+    <div class="left-panel">
+      <div class="profile-image">
+  <img src="img/Rapi.jfif" alt="Profile Image" />
+</div>
+
+      <h1>Ralph Jericho Q. Lumba</h1>
+      <div class="contact-info">
+        <p>ralphjericholumba@gmail.com</p>
+        <p>09399565237</p>
+        <p>949, Purok 1, San Pedro, Minalin, Pampanga</p>
+      </div>
+
+      <br>
+      <section>
+        <h2>Education</h2>
+        <p><strong>Bachelor of Science in Information Technology</strong><br>
+        Don Honorio Ventura State University – Sto. Tomas Campus<br>
+        2023 – Present</p>
+      </section>
+    </div>
+
+    <div class="right-panel">
+      <section>
+        <h2>Objective</h2>
+        <p>Aspiring Information Technology student with a passion for software development,
+           eager to apply and enhance my skills in real-world environments. Dedicated to 
+           continuous learning through hands-on projects, collaborative teamwork, and 
+           innovative problem-solving. Seeking opportunities to contribute to meaningful
+            tech solutions while gaining practical experience in the field.</p>
+
+
+<h6>also to become a hashira and defeat muzan kibutsuji</h6>
+      </section>
+
+  
+
+      <section>
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML & CSS</li>
+          <li>Java (Basic)</li>
+          <li>Python (Basic)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <ul>
+          <li><strong>Java POS</strong> – A simple Point of Sale project for a milk tea shop.</li>
+          <li><strong>Personal Portfolio</strong> – Responsive website built using HTML & CSS.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Hobbies & Interests</h2>
+        <ul>
+          <li>Web Development</li>
+          <li>Mobile App Design</li>
+          <li>Gaming & Coding</li>
+          <li>Chess</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <div class="download-button">
+    <button onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById("resume");
+      html2pdf().from(element).set({
+        margin: 0.5,
+        filename: 'RalphJerichoLumba-Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      }).save();
+    }
+  </script>
+
+</body>
+</html>
